@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pur Com</title>
+</head>
+<body>
+    
+    <div class="nav">
+        <div class="navbar">
+            <div class="nav-left">
+                <a href="#main">Home</a>
+            </div>
+            <div class="nav-center">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button id="dark-mode-toggle">Dark</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay-sidenav" id="overlay-sidenav">
+        <button class="close-btn" id="close-nav">×</button>
+        <a href="#main" onclick="document.getElementById('overlay-sidenav').classList.remove('open');">Home</a>
+        <a href="#about" onclick="document.getElementById('overlay-sidenav').classList.remove('open');">About</a>
+        <a href="#services" onclick="document.getElementById('overlay-sidenav').classList.remove('open');">Services</a>
+        <a href="#products" onclick="document.getElementById('overlay-sidenav').classList.remove('open');">Products</a>
+        <a href="#contact" onclick="document.getElementById('overlay-sidenav').classList.remove('open');">Contact</a>
+        <a href="#blog" onclick="document.getElementById('overlay-sidenav').classList.remove('open');">Blog</a>
+        <button id="dark-mode-toggle-overlay">🌙</button>
+    </div>
+
+    <div class="header" id="header">
+        <button class="hamburger" id="hamburger">☰</button>
+        <div class="header-content">
+            <h1>Welcome to Pur Com</h1>
+            <p>Your gateway to pure commerce solutions.</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Pur Com</div>
+            <div class="footer-tabs">
+                <div class="info-tab">
+                    <h3>Information</h3>
+                    <p>Welcome to Pur Com. We provide pure commerce solutions.</p>
+                </div>
+                <div class="essential-tab">
+                    <h3>Essential Info</h3>
+                    <p>Contact us for more details. Privacy Policy | Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('overlay-sidenav').classList.add('open');
+        });
+
+        document.getElementById('close-nav').addEventListener('click', function() {
+            document.getElementById('overlay-sidenav').classList.remove('open');
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = this;
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = 'Light';
+            } else {
+                button.textContent = 'Dark';
+            }
+        });
+
+        document.getElementById('dark-mode-toggle-overlay').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = this;
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = '☀️';
+            } else {
+                button.textContent = '🌙';
+            }
+        });
+    </script>
+
+</body>
+</html>
